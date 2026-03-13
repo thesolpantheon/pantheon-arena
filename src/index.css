@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F5F2ED;
+  --dark: #242424;
+  --dark-bg: #242422;
+  --light-text: #F4F1EC;
+  --hermes: #B8860B;
+  --ares: #8B2500;
+  --cronus: #6B6B6B;
+  --axiom: #0A7E8C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark section grid pattern */
+.dark-grid {
+  background-color: var(--dark-bg);
+  background-image:
+    linear-gradient(rgba(244, 241, 236, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 241, 236, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Light section subtle grid (optional) */
+.light-grid {
+  background-image:
+    linear-gradient(rgba(36, 36, 36, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 36, 36, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Pulsing dot animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Fade in on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Chart panel styling */
+.chart-panel {
+  background: var(--dark-bg);
+  border: 1px solid rgba(244, 241, 236, 0.08);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(36, 36, 36, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(36, 36, 36, 0.4);
+}
